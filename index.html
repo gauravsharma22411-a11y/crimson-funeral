@@ -140,7 +140,20 @@ border-radius:20px;
 margin-bottom:20px;
 box-shadow:0 0 30px rgba(255,0,60,.7);
 }
-
+#musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+padding:12px 18px;
+border:none;
+border-radius:15px;
+background:#ff003c;
+color:white;
+font-weight:bold;
+cursor:pointer;
+z-index:999;
+box-shadow:0 0 20px rgba(255,0,60,.6);
+}
 </style>
 </head>
 
@@ -251,6 +264,27 @@ Contact me for demos, pricing, or custom development.
 <div class="footer">
 © CRIMSON FUNERAL
 </div>
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
+<button id="musicBtn" onclick="toggleMusic()">
+🎵 MUSIC
+</button>
+
+<script>
+const music = document.getElementById('bgMusic');
+music.volume = 0.12;
+
+function toggleMusic(){
+    if(music.paused){
+        music.play();
+        document.getElementById('musicBtn').innerHTML = '🔇 STOP MUSIC';
+    } else {
+        music.pause();
+        document.getElementById('musicBtn').innerHTML = '🎵 MUSIC';
+    }
+}
+</script>
 </body>
 </html>
