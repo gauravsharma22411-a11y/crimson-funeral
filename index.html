@@ -329,16 +329,37 @@ function toggleMusic(){
         document.getElementById('musicBtn').innerHTML = '🎵 MUSIC';
     }
 }
-<script>
+
 function enterSite(){
     document.getElementById('welcomeScreen').style.display='none';
 
-    const music = document.getElementById('bgMusic');
     if(music){
-        music.volume = 0.12;
         music.play();
+        document.getElementById('musicBtn').innerHTML = '🔇 STOP MUSIC';
     }
 }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
 </body>
 </html>
